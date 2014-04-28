@@ -1,0 +1,15 @@
+.cellListWidget {
+	cursor: default !important;
+}
+.cellListEvenItem {
+	cursor: default !important;
+}
+.cellListOddItem {
+	cursor: default !important;
+}
+.cellListKeyboardSelectedItem {
+	cursor: default !important;
+}
+.cellListSelectedItem {
+	cursor: default !important;
+}

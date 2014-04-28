@@ -1,0 +1,52 @@
+.cellBrowserWidget {
+	
+}
+
+.cellBrowserColumn {
+	
+}
+
+.cellBrowserFirstColumn {
+	
+}
+
+.cellBrowserEvenItem {
+	padding: 8px;
+	background: #EEF4FB;
+	zoom: 1;
+	color: #618bac;
+	font-size: 12pt;
+}
+
+.cellBrowserOddItem {
+	padding: 8px;
+	background: #FFFFFF;
+	zoom: 1;
+	color: #618bac;
+	font-size: 12pt;
+}
+
+.cellBrowserKeyboardSelectedItem {
+	background: #ffc;
+}
+
+.editableCell {
+	text-decoration: underline;
+	cursor: pointer;
+	background-color: #618bac;
+}
+
+@sprite .cellBrowserSelectedItem {
+	gwt-image: 'cellBrowserSelectedBackground';
+	background: #f1f1f1;
+	height: auto;
+	overflow: hidden;
+}
+
+@sprite .cellBrowserOpenItem {
+	gwt-image: 'cellBrowserOpenBackground';
+	background: #f1f1f1;
+	height: auto;
+	overflow: hidden;
+	font-weight: bold;
+}

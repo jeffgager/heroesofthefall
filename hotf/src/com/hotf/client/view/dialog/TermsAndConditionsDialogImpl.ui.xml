@@ -1,0 +1,56 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with field='resources' type='com.hotf.client.Resources'/>
+
+	<g:ScrollPanel height="600px">
+		<g:HTMLPanel addStyleNames="{resources.style.post}">
+<h1>Terms and Conditions of Service</h1>
+						
+<p>www.heroesofthefall.com and its sub-domains (referred to herein as "the site")
+are owned by the author and are operated by him and by the site administrators 
+(who are collectively referred to herein as "we", "us", or "our") 
+solely for the purpose of allowing the user 
+(referred to herein as "you" or "your")
+to create and play role-play games.
+</p><p>
+By using the site, you accept these Terms of Service.  
+We reserve the right, without notification, to change, modify, add, or remove portions of these Terms at any time.
+Please check these Terms periodically for changes.
+Your continued use of the site following the posting of changes to these Terms indicates that you accept those changes.
+</p><p>
+Abuse, baiting, trolling, or personal insults of any nature must not be tolerated on this site. 
+If you create a role-play game on this site and invite other users to play that game then you are required to take all reasonable measures to protect  
+those other users from any form of abuse while playing your game and to take action against anyone who has abused other players. You can  
+remove a character from the control of any other user who you believe has behaved abusively in your game. 
+The site administrators will provide an email address (abuse@heroesofthefall.com) which anyone can use to report abuse. 
+If a complaint is made against you the site administrators may choose to take sanctions against you if they agree that you have behaved in an abusive fashion towards another user. 
+The determination of what constitutes abusive behaviour is at the sole discretion of the administrators of this site and is not open to debate. 
+You absolve the site owner and administrators from any responsibility for, any injury or harm you may suffer while using the site. 
+</p><p>
+Some areas within this site contain adult content.
+By using this site you absolve the site owner and administrators from any responsibility for preventing you or anyone else from viewing adult content if you or they are below the legal age that they are required to be in order to view such material. 
+The responsibility for ensuring that adult content is clearly labelled as such rests entirely with the user who has published that content. 
+Responsibility for ensuring that that a person viewing adult content is of the legal age that they are required to be in order to view such material 
+in accordance with the laws in their permanent place of residence and in the place in which they are currently residing  
+rests entirely with that person, except where that content has not been clearly labelled in which case the user who has published that content must accept complete responsibility.
+</p><p>
+No content from the site may be copied, reproduced, republished, uploaded, posted, transmitted, or distributed in any way without the express, written permission of the author (whether it be us or the posting author).
+Unless you are the original author you may view, download or print any site content however that content cannot be modified or altered in any way. 
+You may not republish, distribute, prepare derivative works from, or otherwise use site content other than as explicitly permitted herein.
+All content published to the site remains the copyright material of the original author, as per copyright laws.  If the poster is not the original author then applicable copyright law must be obeyed.
+Use of this site does not grant you any ownership rights to any site content.
+</p><p>
+Any infringement upon these conditions of use may lead to the restriction of access to some or all areas of the site, either by banning of an Account Name, an IP address, or an IP subnet.  
+GMs can administer their own games as they like and have the ability to ban users at their own discretion.
+</p>
+			<g:HorizontalPanel>
+				<g:Button ui:field="notacceptButton">I Do Not Accept</g:Button>
+				<g:Button ui:field="acceptButton">I Accept</g:Button>
+				<g:Button visible="false" ui:field="closeButton">Close</g:Button>
+			</g:HorizontalPanel>
+		</g:HTMLPanel>
+	</g:ScrollPanel>
+
+</ui:UiBinder>

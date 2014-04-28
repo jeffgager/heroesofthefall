@@ -1,0 +1,67 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:c='urn:import:com.hotf.client.view.component'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:with field='resources' type='com.hotf.client.Resources'/>
+	<ui:style>
+		.headerPanel {
+			display: block;
+			height: 85px;
+			width: 100%;
+			margin: 0 auto 0 auto;
+		}
+		.mainPanel {
+			display: block;
+			clear: none;
+		}
+		.footerPanel {
+			height: 26px;
+			clear: both;
+		}
+		.scroller {
+			width: 100%;
+		}
+	</ui:style>
+
+	<g:ScrollPanel addStyleNames="{style.scroller}">
+		<g:HTMLPanel ui:field="page" addStyleNames="{resources.style.page}">
+			<table class="{resources.style.pageHeader} {style.headerPanel}">
+				<tr>
+					<td>
+						<div class="{resources.style.pageHeaderLeft}">
+							<p>Heroes of The Fall</p>
+						</div>
+					</td>
+					<td width="100%" >
+						<div class="{resources.style.pageHeaderRight}">
+							<g:HorizontalPanel addStyleNames="{resources.style.authenticationBox}">
+								<g:Anchor ui:field="abountLink" href="http://www.heroesofthefall.com">About</g:Anchor>
+								<g:Anchor visible="false" ui:field="strongholdLink">Account</g:Anchor>
+								<g:Anchor visible="false" ui:field="playLink">Play</g:Anchor>
+								<g:Anchor visible="false" ui:field="gamesLink">Games</g:Anchor>
+								<g:Anchor ui:field="logoutLink">Logout</g:Anchor>
+							</g:HorizontalPanel>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan='2'>
+						<div style="display:inline; float: right;">
+							<c:MessagePanel ui:field="messagePanel"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			
+			<g:FlowPanel ui:field="mainPanel" addStyleNames="{style.mainPanel}">
+				<g:SimplePanel ui:field="pageBody"/>
+			</g:FlowPanel>
+
+			<g:HTMLPanel addStyleNames="{resources.style.pageFooter} {style.footerPanel}">
+				 <p>Copyright (c) 2011 www.heroesofthefall.com</p>
+			</g:HTMLPanel>
+
+		</g:HTMLPanel>
+	</g:ScrollPanel>
+
+</ui:UiBinder>

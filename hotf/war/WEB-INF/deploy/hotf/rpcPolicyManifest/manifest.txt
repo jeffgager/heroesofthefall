@@ -1,0 +1,3 @@
+# Module hotf
+# RPC service class, partial path of RPC policy file
+net.customware.gwt.dispatch.client.standard.StandardDispatchService, B6D8AA0CBAA39E0B91DDAB40C0A5CA06.gwt.rpc

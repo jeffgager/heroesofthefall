@@ -1,0 +1,41 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:c='urn:import:com.hotf.client.view.component'
+	xmlns:f='urn:import:com.hotf.client.view.control'>
+
+	<ui:with field='resources' type='com.hotf.client.Resources' />
+
+	<g:HTMLPanel addStyleNames="{resources.style.post}">
+		<div class="{resources.style.postCommands}">
+			<g:Anchor ui:field="editLink">Edit</g:Anchor>
+			<g:Anchor ui:field="closeLink">Close</g:Anchor>
+		</div>
+		<table>
+			<tr>
+				<td valign="top" align="center" rowspan="2">
+					<g:FlowPanel ui:field="portraitPanel" addStyleNames="{resources.style.characterPortrait}">
+						<g:Image ui:field="portraitField"/>
+					</g:FlowPanel>
+				</td>
+				<td><p class="{resources.style.formLabel}">Name</p></td>
+				<td width="30%">
+					<p><g:HTML ui:field="nameField" addStyleNames="{resources.style.wideViewField}"/></p>
+				</td>
+				<td><p class="{resources.style.formLabel}">Player</p></td>
+				<td width="30%">
+					<p><g:HTML ui:field="playerField" addStyleNames="{resources.style.wideViewField}"/></p>
+				</td>
+				<td><p class="{resources.style.formLabel}">Status</p></td>
+				<td width="30%">
+					<p><g:HTML ui:field="statusField" addStyleNames="{resources.style.wideViewField}"/></p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6">
+					<g:HTML ui:field="descriptionField" />
+				</td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

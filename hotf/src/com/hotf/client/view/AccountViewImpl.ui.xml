@@ -1,0 +1,157 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:l="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:c='urn:import:com.hotf.client.view.control'>
+	
+	<ui:with field='resources' type='com.hotf.client.Resources' />
+	<ui:with field='images' type='com.hotf.client.image.Images' />
+
+	<ui:style field='style'>
+		.leftPanel {
+			display: inline;
+			float: left;
+			width: 260px;
+			border-radius: 13px;
+			-moz-border-radius: 13px;
+			background: #D3DEF6 url(hotf/gwt/chrome/images/hborder.png) repeat-x 0px -989px;
+			border: 1px solid #BBB;
+		}
+		.leftPanel p {
+			padding: 6px;
+			white-space: nowrap;
+		}
+		.leftPanel textArea {
+			padding: 6px;
+			border: none;
+			resize: none;
+		}
+		.mainPanel {
+			display: block;
+			margin-left: 273px;
+		}
+		.usernameField {
+			width: 104px;
+			height: 19px;
+		}
+		.fetchRowsField {
+			width: 104px;
+			height: 19px;
+		}
+		.searchRowsField {
+			width: 104px;
+			height: 19px;
+		}
+		.showPortraitsField {
+			width: 104px;
+			height: 19px;
+		}
+		.buttons {
+			clear: both;
+		}
+		.inputBox {
+			display: block;
+			margin: 13px 13px 0px 13px;
+		}
+		.buttons {
+			display: block;
+		}
+		.buttons button {
+			margin: 6px 3px 13px 13px;
+		}
+		.buttons img {
+			margin: 9px 3px 0px 3px;
+		}
+		.buttons p {
+			margin: 8px 3px 0px 3px;
+		}
+		.buttons div {
+			margin: 1px 3px 0px 3px;
+		}
+		.map {
+			display: block;
+			margin: 6px; 
+		}
+		.marker {
+			z-index: 1;
+			padding: 0;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel ui:field="placePanelField">
+
+		<table class="{style.leftPanel}">
+			<tr>
+				<td>
+					<p>User name</p>
+				</td>
+				<td>
+					<g:TextBox title="Your user name is the only identity that is visible to other users" ui:field="usernameField" addStyleNames="{style.usernameField}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Fetch rows</p>
+				</td>
+				<td>
+					<g:TextBox title="The maximum number of posts that will be fetched in one go" ui:field="fetchRowsField" addStyleNames="{style.fetchRowsField}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Search rows</p>
+				</td>
+				<td>
+					<g:TextBox title="The maximum number of rows that will be displayed when you search for something" ui:field="searchRowsField" addStyleNames="{style.searchRowsField}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Show portraits</p>
+				</td>
+				<td>
+					<g:CheckBox title="Show or hide character portraits in the post list" ui:field="showPortraitsField" addStyleNames="{style.showPortraitsField}"/>
+				</td>
+			</tr>
+		</table>
+
+		<div class="{style.mainPanel}">
+
+			<div class="{resources.style.post}">
+
+				<div class="{resources.style.postCommands}">
+					<g:Anchor ui:field="saveLink">Save</g:Anchor>
+				</div>
+	
+				<h1>Welcome to Heroes of the Fall</h1>
+				
+				<p>The first thing you have to do is enter a user name, choose well because it cannot be changed!
+				</p>
+
+				<p>You will receive administration messages on this page, for instance when someone assigns a character to your account 
+				so that you can play it. You can also set your account options here.
+				</p>
+				
+				<p>Before using this site you must accept the <g:Anchor ui:field="tacLink">Terms and Conditions</g:Anchor> 
+				so that you understand your responsibilities. To accept the Terms and Conditions please press the <strong>Save</strong> button above.
+				You will be prompted to accept the Terms and Conditions every time you save changes to your Account Page and every time the Terms and 
+				Conditions change.
+				</p>
+
+				<p>Enjoy your gaming, but please don't forget that without people who are willing to be GMs there would be no game.
+				</p>
+	
+			</div>
+	
+			<l:CellList ui:field="postList"/>
+	
+			<g:FlowPanel addStyleNames="{resources.style.morePosts}">
+				<g:Anchor visible="false" ui:field="getMorePostsLink" title="Get more posts">Get more posts</g:Anchor>
+				<g:HTML visible="false" ui:field="noMorePostsField">No more posts</g:HTML>
+			</g:FlowPanel>
+
+		</div>
+
+	</g:HTMLPanel>
+
+</ui:UiBinder>

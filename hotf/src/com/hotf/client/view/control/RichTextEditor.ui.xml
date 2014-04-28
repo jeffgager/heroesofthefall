@@ -1,0 +1,197 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:o="urn:import:com.sun.org.apache.xpath.internal.operations">
+
+	<ui:with field='constants' type='com.hotf.client.StringConstants' />
+	<ui:with field='images' type='com.hotf.client.image.Images' />
+
+	<ui:style field='style'>
+		.portrait {
+			width: 50px;
+			height: 50px;
+		}
+		.mainPanel {
+			display: block;
+		}
+		.imageButton {
+			margin: 0;
+			padding: 0;
+			width: 20px;
+			height: 20px;
+		}
+		.edit {
+			display: block;
+			width: 100%;
+			hieght: 100%;
+			background-color: #F8F8F8;
+			border: 1px inset #618bac;
+		}
+		.edit * {
+			margin: 0 0 0 0 !important;
+			padding: 0 0 0 0 !important;
+		}
+		.button {
+			width:20px;
+			height:20px;
+		}
+		.image img {
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			width:20px;
+			height:20px;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel ui:field="mainPanel" addStyleNames="{style.mainPanel}">
+		<table height="100%">
+			<tr>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="boldButton" title="{constants.bold}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.bold}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.bold}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="italicButton" title="{constants.italic}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.italic}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.italic}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="underlineButton" title="{constants.underline}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.underline}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.underline}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="subscriptButton" title="{constants.subscript}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.subscript}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.subscript}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="superscriptButton" title="{constants.superscript}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.superscript}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.superscript}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="justifyLeftButton" title="{constants.justifyLeft}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.justifyLeft}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.justifyLeft}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="justifyCenterButton" title="{constants.justifyCenter}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.justifyCenter}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.justifyCenter}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="justifyRightButton" title="{constants.justifyRight}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.justifyRight}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.justifyRight}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:ToggleButton ui:field="strikethroughButton" title="{constants.strikeThrough}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.strikeThrough}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.strikeThrough}" addStyleNames="{style.image}"/>
+			</g:ToggleButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="indentButton" title="{constants.indent}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.indent}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.indent}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="outdentButton" title="{constants.outdent}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.outdent}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.outdent}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="hrButton" title="{constants.hr}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.hr}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.hr}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="olButton" title="{constants.ol}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.ol}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.ol}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="ulButton" title="{constants.ul}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.ul}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.ul}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="insertImageButton" title="{constants.drawImage}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.drawImage}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.drawImage}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td class="{style.button}">
+			<g:PushButton ui:field="removeFormatButton" title="{constants.removeFormat}" addStyleNames="{style.imageButton}">
+				<g:upFace image="{images.removeFormat}" addStyleNames="{style.image}"/>
+				<g:downFace image="{images.removeFormat}" addStyleNames="{style.image}"/>
+			</g:PushButton>
+				</td>
+				<td width="100%">
+				</td>
+				<td rowspan="2">
+					<g:Image ui:field="portraitField" addStyleNames="{style.portrait}"/>
+				</td>
+			</tr>
+			<tr height='22'>
+				<td colspan='17'>
+			<g:ListBox ui:field="backColors">
+				<g:item><ui:text from="{constants.backgroundColor}"/></g:item>
+				<g:item><ui:text from="{constants.white}"/></g:item>
+				<g:item><ui:text from="{constants.black}"/></g:item>
+				<g:item><ui:text from="{constants.red}"/></g:item>
+				<g:item><ui:text from="{constants.green}"/></g:item>
+				<g:item><ui:text from="{constants.yellow}"/></g:item>
+				<g:item><ui:text from="{constants.blue}"/></g:item>
+			</g:ListBox>
+			<g:ListBox ui:field="foreColors">
+				<g:item><ui:text from="{constants.forgroundColor}"/></g:item>
+				<g:item><ui:text from="{constants.white}"/></g:item>
+				<g:item><ui:text from="{constants.black}"/></g:item>
+				<g:item><ui:text from="{constants.red}"/></g:item>
+				<g:item><ui:text from="{constants.green}"/></g:item>
+				<g:item><ui:text from="{constants.yellow}"/></g:item>
+				<g:item><ui:text from="{constants.blue}"/></g:item>
+			</g:ListBox>
+			<g:ListBox ui:field="fonts">
+				<g:item><ui:text from="{constants.font}"/></g:item>
+				<g:item><ui:text from="{constants.fontNormal}"/></g:item>
+				<g:item><ui:text from="{constants.fontTimesNewRoman}"/></g:item>
+				<g:item><ui:text from="{constants.fontArial}"/></g:item>
+				<g:item><ui:text from="{constants.fontCourierNew}"/></g:item>
+				<g:item><ui:text from="{constants.fontGeorgia}"/></g:item>
+				<g:item><ui:text from="{constants.fontTrebuchet}"/></g:item>
+				<g:item><ui:text from="{constants.fontVerdana}"/></g:item>
+			</g:ListBox>
+			<g:ListBox ui:field="fontSizes">
+				<g:item><ui:text from="{constants.size}"/></g:item>
+				<g:item><ui:text from="{constants.xxsmall}"/></g:item>
+				<g:item><ui:text from="{constants.xsmall}"/></g:item>
+				<g:item><ui:text from="{constants.small}"/></g:item>
+				<g:item><ui:text from="{constants.medium}"/></g:item>
+				<g:item><ui:text from="{constants.large}"/></g:item>
+				<g:item><ui:text from="{constants.xlarge}"/></g:item>
+				<g:item><ui:text from="{constants.xxlarge}"/></g:item>
+			</g:ListBox>
+				</td>
+			</tr>
+			<tr height='100%'>
+				<td colspan='18' width='100%'><g:RichTextArea ui:field="textEditField" addStyleNames="{style.edit}" /></td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

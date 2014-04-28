@@ -1,0 +1,48 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:c="urn:import:com.hotf.client.view.component"
+	xmlns:f='urn:import:com.hotf.client.view.control'>
+
+	<ui:with field='resources' type='com.hotf.client.Resources' />
+
+	<g:HTMLPanel addStyleNames="{resources.style.commandStack}">
+
+		<table>
+
+		<tr><td colspan='2'><g:HTML><h1>Post</h1></g:HTML></td></tr>
+		<tr><td><g:Anchor ui:field="refresh" title="Show All Posts">Refresh</g:Anchor></td>
+		    <td><g:Anchor ui:field="important" title="Show Important Posts">Important</g:Anchor></td></tr>
+
+		<tr><td colspan='2'><g:HTML><h1>Character</h1></g:HTML></td></tr>
+		<tr><td colspan='2'><f:Chooser title="Select a character" clearOnSelect="true" addStyleNames="{resources.style.chooser}" ui:field="selectCharacterChooser" /></td></tr>
+		<tr>
+			<td><g:Anchor ui:field="openCharacter" title="Open Character">Open</g:Anchor></td>
+			<td><g:Anchor ui:field="createCharacter" title="Create New Character">Create</g:Anchor></td>
+		</tr><tr>
+			<td><g:Anchor ui:field="playCharacter" title="Play Character">Play</g:Anchor></td>
+			<td><g:Anchor ui:field="hideCharacter" title="Hide Character">Hide</g:Anchor></td>
+		</tr>
+		<tr>
+			<td><g:Anchor ui:field="copyCharacter" title="Copy Character">Copy</g:Anchor></td>
+			<td><g:Anchor ui:field="moveCharacterMap" title="Move Character to Selected Map">Move</g:Anchor></td>
+		</tr>
+
+		<tr><td colspan='2'><g:HTML><h1>Place</h1></g:HTML></td></tr>
+		<tr><td colspan='2'><f:Chooser title="Select a Place" clearOnSelect="true" addStyleNames="{resources.style.chooser}" ui:field="selectLocationChooser" /></td></tr>
+		<tr><td colspan='2'><g:HTML visible="false" ui:field="mapNameField"/></td></tr>
+		<tr>
+			<td><g:Anchor ui:field="openMap" title="OpenPlace">Open</g:Anchor></td>
+			<td><g:Anchor ui:field="createMap" title="Create New Place">Create</g:Anchor></td>
+		</tr>
+
+		<tr><td colspan='2'><g:HTML><h1>Game</h1></g:HTML></td></tr>
+		<tr>
+			<td><g:Anchor ui:field="openGame" title="Open Game">Open</g:Anchor></td>
+		</tr>
+
+		</table>
+
+	</g:HTMLPanel>
+	
+</ui:UiBinder>

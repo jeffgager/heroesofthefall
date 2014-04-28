@@ -1,0 +1,55 @@
+<!-- Indices written at Mon, 6 May 2013 00:10:42 BST -->
+
+<datastore-indexes>
+
+    <!-- Used 146 times in query history -->
+    <datastore-index kind="CharacterGeneralSkill" ancestor="true" source="auto">
+        <property name="skills_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 186 times in query history -->
+    <datastore-index kind="CharacterSkill" ancestor="true" source="auto">
+        <property name="skills_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="GameArmour" ancestor="true" source="auto">
+        <property name="armour_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="GameArtifact" ancestor="true" source="auto">
+        <property name="artifacts_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="GameWeapon" ancestor="true" source="auto">
+        <property name="weapons_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 24 times in query history -->
+    <datastore-index kind="Character" ancestor="false" source="auto">
+        <property name="interested" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 14 times in query history -->
+    <datastore-index kind="Post" ancestor="false" source="auto">
+        <property name="presentIds" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 46 times in query history -->
+    <datastore-index kind="Character" ancestor="false" source="auto">
+        <property name="characterType" direction="asc"/>
+        <property name="locationId" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 14 times in query history -->
+    <datastore-index kind="Place" ancestor="false" source="auto">
+        <property name="gameId" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

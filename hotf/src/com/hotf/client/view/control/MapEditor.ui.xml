@@ -1,0 +1,299 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' 
+	xmlns:c='urn:import:com.google.gwt.canvas.client'
+	xmlns:v='urn:import:com.hotf.client.view.control'>
+
+	<ui:with field='constants' type='com.hotf.client.StringConstants' />
+	<ui:with field='images' type='com.hotf.client.image.Images' />
+
+	<ui:style field='style'>
+		.mainPanel {
+		}
+		.handlePanel {
+			position: relative;
+		}
+		.buttonPanel {
+			border-radius:13px;
+			-moz-border-radius:13px;
+			background: #D3DEF6 url(hotf/gwt/chrome/images/hborder.png) repeat-x 0px -989px;
+			border: 1px solid #BBB;
+			display: block;
+			float: left;
+			padding:13px;
+			margin: 0 0 0 0;
+			width: 156px;
+		}
+		.buttonPanel p {
+			margin: 0 0 0 0;
+		}
+		.toolPanel {
+			border-radius:13px;
+			-moz-border-radius:13px;
+			background: #D3DEF6 url(hotf/gwt/chrome/images/hborder.png) repeat-x 0px -989px;
+			border: 1px solid #BBB;
+			display: block;
+			float: left;
+			padding:13px;
+			margin: 0;
+		}
+		.imageButton {
+			width: 23px;
+			height: 23px;
+			background-color: #000000;
+		}
+		.editPanel {
+			border-radius:13px;
+			-moz-border-radius:13px;
+			background: #D3DEF6 url(hotf/gwt/chrome/images/hborder.png) repeat-x 0px -989px;
+			border: 1px solid #BBB;
+			margin-left: 195px;
+			padding-top:13px;
+		}
+		.editPort {
+			width: 600px;
+			height: 600px;
+			border: 2px raised #618bac;
+			margin: auto auto auto auto;
+		}
+		.canvas {
+			border: 2px raised #618bac;
+			background-color: #FFFFFF;
+		}
+		.inputField {
+			width: 65px;
+		}	
+		.inputHeader {
+			display: block;
+		}	
+		.inputLabel {
+			display: block;
+			text-align: right;
+			padding-right: 2px;
+		}	
+		.size {
+			margin-left:13px;
+		}
+		.image {
+			border-radius: 2px;
+			-moz-border-radius: 2px;
+			background: #D3DEF6 url(hotf/gwt/chrome/images/hborder.png) repeat-x 0px -989px;
+			border: 1px solid #BBB;
+			width: 60px;
+			height: 60px;
+			margin: auto;
+			cursor: pointer;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel addStyleNames="{style.mainPanel}">
+		<div class="{style.buttonPanel}">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td colspan="2">
+						<g:HTML><h1 class="{style.inputHeader}">Canvas</h1></g:HTML>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Width</p>
+					</td>
+					<td>
+						<g:TextBox title="Width" ui:field="widthField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Height</p>
+					</td>
+					<td>
+						<g:TextBox title="Height" ui:field="heightField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+					<td/>
+					<td>
+						<g:PushButton ui:field="resizeButton">
+							Resize
+						</g:PushButton>
+					</td>
+				<tr>
+					<td colspan="2">
+						<g:HTML><h1 class="{style.inputHeader}">Line</h1></g:HTML>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Width</p>
+					</td>
+					<td>
+						<g:TextBox title="Line Size" ui:field="strokeSizeField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Cap</p>
+					</td>
+					<td>
+						<g:ListBox title="Line Cap" ui:field="strokeCapField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Join</p>
+					</td>
+					<td>
+						<g:ListBox title="Line Join" ui:field="strokeJoinField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:HTML><h1 class="{style.inputHeader}">Palette</h1></g:HTML>
+					</td>
+					<td>
+						<g:HTML><h1 class="{style.inputHeader}">Image</h1></g:HTML>
+					</td>
+				</tr>
+				<tr>
+					<td width="60px" height="60px">
+						<g:Image ui:field="paletteField" addStyleNames="{style.image}"/>
+					</td>
+					<td width="60px" height="60px">
+						<g:Image url="/images/nomap.png" title="Upload Image" ui:field="imageField" addStyleNames="{style.image}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Stroke</p>
+					</td>
+					<td>
+						<v:ColorField title="Line Style" ui:field="strokeStyleField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Fill</p>
+					</td>
+					<td>
+						<v:ColorField title="Fill Style" ui:field="fillStyleField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="{style.inputLabel}">Text</p>
+					</td>
+					<td>
+						<v:ColorField title="Text Style" ui:field="textStyleField" addStyleNames="{style.inputField}"/>
+					</td>
+				</tr>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" class="{style.toolPanel}">
+				<tr>
+					<td colspan="3">
+						<g:HTML><h1 class="{style.inputHeader}">Drawing Tools</h1></g:HTML>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:PushButton ui:field="undoButton" title="{constants.undo}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.undo}"/>
+							<g:downFace image="{images.undo}"/>
+						</g:PushButton>
+					</td>
+					<td>
+						<g:PushButton ui:field="redoButton" title="{constants.redo}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.redo}"/>
+							<g:downFace image="{images.redo}"/>
+						</g:PushButton>
+					</td>
+					<td>
+						<g:PushButton ui:field="finishButton" title="{constants.finish}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.finish}"/>
+							<g:downFace image="{images.finish}"/>
+						</g:PushButton>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:ToggleButton value="true" ui:field="pencilButton" title="{constants.pencil}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.pencil}"/>
+							<g:downFace image="{images.pencil}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:ToggleButton ui:field="textButton" title="{constants.text}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.text}"/>
+							<g:downFace image="{images.text}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:ToggleButton ui:field="polygonButton" title="{constants.polygon}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.polygon}"/>
+							<g:downFace image="{images.polygon}"/>
+						</g:ToggleButton>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:ToggleButton ui:field="lineButton" title="{constants.line}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.line}"/>
+							<g:downFace image="{images.line}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:ToggleButton ui:field="imageButton" title="{constants.drawImage}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.drawImage}"/>
+							<g:downFace image="{images.drawImage}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:ToggleButton ui:field="filledPolygonButton" title="{constants.filledPolygon}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.filledPolygon}"/>
+							<g:downFace image="{images.filledPolygon}"/>
+						</g:ToggleButton>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:PushButton ui:field="fillAllButton" title="{constants.filledRectangle}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.filledRectangle}"/>
+							<g:downFace image="{images.filledRectangle}"/>
+						</g:PushButton>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<g:HTML><h1 class="{style.inputHeader}">Erasing Tools</h1></g:HTML>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g:ToggleButton ui:field="eraseButton" title="{constants.erase}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.erase}"/>
+							<g:downFace image="{images.erase}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:ToggleButton ui:field="erasePolygonButton" title="{constants.erasePolygon}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.polygon}"/>
+							<g:downFace image="{images.polygon}"/>
+						</g:ToggleButton>
+					</td>
+					<td>
+						<g:PushButton ui:field="clearButton" title="{constants.rectangle}" addStyleNames="{style.imageButton}">
+							<g:upFace image="{images.rectangle}"/>
+							<g:downFace image="{images.rectangle}"/>
+						</g:PushButton>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<g:FlowPanel addStyleNames="{style.editPanel}">
+			<g:ScrollPanel addStyleNames="{style.editPort}">
+				<g:AbsolutePanel ui:field="handlePanel" addStyleNames="{style.handlePanel}">
+					<c:Canvas ui:field="canvas" addStyleNames="{style.canvas}"/>
+				</g:AbsolutePanel>
+			</g:ScrollPanel>
+			<g:Label ui:field="imageSize"  addStyleNames="{style.size}"/>
+		</g:FlowPanel>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

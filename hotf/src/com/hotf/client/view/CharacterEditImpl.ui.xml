@@ -1,0 +1,187 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:c='urn:import:com.hotf.client.view.component'
+	xmlns:f='urn:import:com.hotf.client.view.control'
+	xmlns:l="urn:import:com.google.gwt.user.cellview.client">
+
+	<ui:with field='resources' type='com.hotf.client.Resources' />
+
+	<ui:style>
+		.armourPanel {
+			text-align: center !important;
+		}
+		.tabPanel {
+			height: 546px;
+		}
+		.scrollPanel {
+			width: 100%;
+			height: 450px;
+		}
+		.dataPanel {
+			width: 100%;
+			height: 450px;
+		}
+		.smallField {
+			min-width: 0;
+		}
+	</ui:style>
+	<g:HTMLPanel addStyleNames="{resources.style.post}">
+		<div class="{resources.style.postCommands}">
+			<g:Anchor ui:field="uploadPortraitLink">Upload Portrait</g:Anchor>
+			<g:Anchor ui:field="saveLink">Save</g:Anchor>
+			<g:Anchor ui:field="closeLink">Close</g:Anchor>
+		</div>
+		<table width="100%" class="{resources.style.form}">
+			<tr>
+				<td align="center" rowspan="3">
+					<g:VerticalPanel ui:field="portraitPanel" addStyleNames="{resources.style.characterPortrait}">
+						<g:Image ui:field="portraitField"/>
+					</g:VerticalPanel>
+				</td>
+				<td><p class="{resources.style.formLabel}">Name</p></td>
+				<td width="100%"><g:TextBox ui:field="nameField" addStyleNames="{resources.style.wideFormField}"/></td>
+				<td><p class="{resources.style.formLabel}">Character Points</p></td>
+				<td><g:Label ui:field="characterCostField" addStyleNames="{resources.style.viewField} {style.smallField}"/></td>
+				<td><g:TextBox ui:field="characterPointsField" addStyleNames="{resources.style.formField}"/></td>
+				<td><p class="{resources.style.formLabel}">Vigour</p></td>
+				<td><g:TextBox ui:field="vigourField" addStyleNames="{resources.style.formField}"/></td>
+				<td><p class="{resources.style.formLabel}">Mettle</p></td>
+				<td><g:TextBox ui:field="mettleField" addStyleNames="{resources.style.formField}"/></td>
+			</tr>
+			<tr>
+				<td><p class="{resources.style.formLabel}">Status</p></td>
+				<td><g:TextBox ui:field="statusField" addStyleNames="{resources.style.wideFormField}"/></td>
+				<td><p class="{resources.style.formLabel}">Skill Ranks</p></td>
+				<td><g:Label ui:field="skillCostField" addStyleNames="{resources.style.viewField} {style.smallField}"/></td>
+				<td>
+					<g:ListBox ui:field="skillRanksField" addStyleNames="{resources.style.wideFormField}">
+						<g:item value=''></g:item>
+						<g:item value='3'>(3) Novice</g:item>
+						<g:item value='6'>(6) Journeyman</g:item>
+						<g:item value='9'>(9) Expert</g:item>
+					</g:ListBox>
+				</td>
+				<td><p class="{resources.style.formLabel}">Glamour</p></td>
+				<td><g:TextBox ui:field="glamourField" addStyleNames="{resources.style.formField}"/></td>
+				<td><p class="{resources.style.formLabel}">Wit</p></td>
+				<td><g:TextBox ui:field="witField" addStyleNames="{resources.style.formField}"/></td>
+			</tr>
+			<tr>
+				<td><p class="{resources.style.formLabel}">Player</p></td>
+				<td><f:Chooser ui:field="playerField" addStyleNames="{resources.style.chooser}"/></td>
+				<td><p class="{resources.style.formLabel}">Handed</p></td>
+				<td colspan="2">
+					<g:ListBox ui:field="handedField" addStyleNames="{resources.style.wideFormField}">
+						<g:item value='R'>Right</g:item>
+						<g:item value='L'>Left</g:item>
+						<g:item value='A'>Ambidextrous</g:item>
+					</g:ListBox>
+				</td>
+				<td><p class="{resources.style.formLabel}">Spirit</p></td>
+				<td><g:TextBox ui:field="spiritField" addStyleNames="{resources.style.formField}"/></td>
+				<td><p class="{resources.style.formLabel}">Wyrd</p></td>
+				<td><g:TextBox ui:field="wyrdField" addStyleNames="{resources.style.formField}"/></td>
+			</tr>
+			<tr>
+				<td width='100%' valign='top' colspan='10' rowspan='7'>
+					<g:TabLayoutPanel ui:field="tabPanel" addStyleNames="{style.tabPanel}" barUnit='PX' barHeight='39'>
+						<g:tab>
+							<g:header size='3'>Public Description</g:header>
+							<f:RichTextEditor height="390px" ui:field="descriptionField" addStyleNames="{resources.style.formArea}"/>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Private Description</g:header>
+							<f:RichTextEditor height="390px" ui:field="sheetField" addStyleNames="{resources.style.formArea}"/>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Skills</g:header>
+							<g:HTMLPanel>
+								<table class="{style.scrollPanel}">
+									<tr>
+										<td width='50%' align='left'>
+											<g:HorizontalPanel ui:field="addGeneralSkillCommands" addStyleNames="{resources.style.postCommands}">
+												<g:HTML><p>General Skill</p></g:HTML>
+												<g:Anchor ui:field="addGeneralSkillLink">Add</g:Anchor>
+												<g:ListBox ui:field="generalSkillSelection"/>
+											</g:HorizontalPanel>
+										</td>
+										<td width='50%' align='left'>
+											<g:HorizontalPanel ui:field="addSkillCommands" addStyleNames="{resources.style.postCommands}">
+												<g:HTML><p>Specific Skill</p></g:HTML>
+												<g:Anchor ui:field="addSkillLink">Add</g:Anchor>
+												<g:ListBox ui:field="skillSelection"/>
+											</g:HorizontalPanel>
+										</td>
+									</tr>
+									<tr>
+										<td width='100%' colspan='2'>
+											<l:CellBrowser ui:field="skillsList" addStyleNames="{style.scrollPanel}"/>
+										</td>
+									</tr>
+								</table>
+							</g:HTMLPanel>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Equipment</g:header>
+							<g:HTMLPanel>
+								<table width='100%'>
+									<tr><td width='33%'>
+										<g:HorizontalPanel ui:field="addArmourCommands" addStyleNames="{resources.style.postCommands}">
+											<g:Anchor ui:field="addArmourLink">Add</g:Anchor>
+											<g:ListBox ui:field="armourSelection"/>
+										</g:HorizontalPanel>
+										<g:ScrollPanel addStyleNames="{style.scrollPanel}">
+											<l:CellTable ui:field="armourList"/>
+										</g:ScrollPanel>
+									</td>
+									<td width='33%'>
+										<g:HorizontalPanel ui:field="addWeaponCommands" addStyleNames="{resources.style.postCommands}">
+											<g:Anchor ui:field="addWeaponLink">Add</g:Anchor>
+											<g:ListBox ui:field="weaponSelection"/>
+										</g:HorizontalPanel>
+										<g:ScrollPanel addStyleNames="{style.scrollPanel}">
+											<l:CellTable ui:field="weaponList"/>
+										</g:ScrollPanel>
+									</td>
+									<td width='33%'>
+										<g:HorizontalPanel ui:field="addArtifactCommands" addStyleNames="{resources.style.postCommands}">
+											<g:Anchor ui:field="addArtifactLink">Add</g:Anchor>
+											<g:ListBox ui:field="artifactSelection"/>
+										</g:HorizontalPanel>
+										<g:ScrollPanel addStyleNames="{style.scrollPanel}">
+											<l:CellTable ui:field="artifactList"/>
+										</g:ScrollPanel>
+									</td></tr>
+								</table>
+							</g:HTMLPanel>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Armour</g:header>
+								<g:HTMLPanel>
+									<g:HorizontalPanel ui:field="setArmourCommands" addStyleNames="{resources.style.postCommands}">
+										<g:HTML><p>Armour</p></g:HTML>
+										<g:Anchor ui:field="replaceArmour">Set</g:Anchor>
+										<g:ListBox ui:field="replacementArmourField"/>
+									</g:HorizontalPanel>
+									<table width='100%' class="{style.armourPanel}">
+										<tr><td></td><td/><td><g:Anchor ui:field="headLink">Head (0/0/0)</g:Anchor></td><td/><td/></tr>
+										<tr><td/><td><g:Anchor ui:field="leftEyeLink">Left Eye<br/>(0/0/0)</g:Anchor></td><td><g:Anchor ui:field="faceLink">Face (0/0/0)</g:Anchor></td><td><g:Anchor ui:field="rightEyeLink">Right Eye<br/>(0/0/0)</g:Anchor></td><td/></tr>
+										<tr><td/><td/><td><g:Anchor ui:field="neckLink">Neck (0/0/0)</g:Anchor></td><td/><td/></tr>
+										<tr><td/><td/><td><g:Anchor ui:field="throatLink">Throat (0/0/0)</g:Anchor></td><td/><td/></tr>
+										<tr><td/><td><g:Anchor ui:field="leftShoulderLink">Left Shoulder<br/>(0/0/0)</g:Anchor></td><td><g:Anchor ui:field="chestLink">Chest<br/>(0/0/0)</g:Anchor></td><td><g:Anchor ui:field="rightShoulderLink">Right Shoulder<br/>(0/0/0)</g:Anchor></td><td/></tr>
+										<tr><td><g:Anchor ui:field="leftArmLink">Left Arm<br/>(0/0/0)</g:Anchor></td><td/><td><g:Anchor ui:field="abdomenLink">Abdomen<br/>(0/0/0)</g:Anchor></td><td/><td><g:Anchor ui:field="rightArmLink">Right Arm<br/>(0/0/0)</g:Anchor></td></tr>
+										<tr><td><g:Anchor ui:field="leftHandLink">Left Hand<br/>(0/0/0)</g:Anchor></td><td/><td><g:Anchor ui:field="buttockLink">Buttock<br/>(0/0/0)</g:Anchor></td><td/><td><g:Anchor ui:field="rightHandLink">Right Hand<br/>(0/0/0)</g:Anchor></td></tr>
+										<tr><td></td><td><g:Anchor ui:field="leftThighLink">Left Thigh<br/>(0/0/0)</g:Anchor></td><td><g:Anchor ui:field="groinLink">Groin<br/>(0/0/0)</g:Anchor></td><td><g:Anchor ui:field="rightThighLink">Right Thigh<br/>(0/0/0)</g:Anchor></td><td></td></tr>
+										<tr><td></td><td><g:Anchor ui:field="leftLegLink">Left Leg<br/>(0/0/0)</g:Anchor></td><td></td><td><g:Anchor ui:field="rightLegLink">Right Leg<br/>(0/0/0)</g:Anchor></td><td></td></tr>
+										<tr><td/><td><g:Anchor ui:field="leftFootLink">Left Foot<br/>(0/0/0)</g:Anchor></td><td></td><td><g:Anchor ui:field="rightFootLink">Right Foot<br/>(0/0/0)</g:Anchor></td><td/></tr>
+										<tr><td/><td/><td><g:Anchor ui:field="backLink">Back (0/0/0)</g:Anchor></td><td/><td/></tr>
+									</table>
+								</g:HTMLPanel>
+						</g:tab>
+					</g:TabLayoutPanel>
+				</td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

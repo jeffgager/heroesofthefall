@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<g:HTMLPanel>
+		<embed>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			   <circle cx="200" cy="100" r="30" 
+			       style="fill: none; stroke:red; stroke-width:30; stroke-opacity:0.2"/>
+			   <circle cx="200" cy="100" r="45" 
+			       style="fill: none; stroke:#D4A017; stroke-width:1; stroke-opacity:1"/>
+			   <circle cx="200" cy="100" r="15" 
+			       style="fill: none; stroke:#D4A017; stroke-width:1; stroke-opacity:1"/>
+			</svg>
+		</embed>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

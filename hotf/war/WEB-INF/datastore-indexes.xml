@@ -1,0 +1,52 @@
+<datastore-indexes autoGenerate="true">
+
+    <datastore-index kind="Character" ancestor="false" source="auto">
+        <property name="locationId" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index>
+
+    <datastore-index kind="Character" ancestor="false" source="auto">
+        <property name="interested" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index> 
+
+    <datastore-index kind="Place" ancestor="false" source="auto">
+        <property name="gameId" direction="asc"/>
+        <property name="nameUpper" direction="asc"/>
+    </datastore-index>
+
+    <datastore-index kind="Place" ancestor="false" source="auto">
+        <property name="type" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="auto">
+        <property name="presentIds" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="auto">
+        <property name="presentIds" direction="asc"/>
+        <property name="createdOrder" direction="asc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="auto">
+        <property name="importantIds" direction="asc"/>
+        <property name="presentIds" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="auto">
+        <property name="locationId" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="importantIds" direction="asc"/>
+        <property name="locationId" direction="asc"/>
+        <property name="createdOrder" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>
+
+ 

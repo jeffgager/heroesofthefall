@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='hotf'>
+
+	<inherits name='com.google.gwt.user.User' />
+
+	<inherits name='com.google.gwt.activity.Activity' />
+	<inherits name='com.google.gwt.user.theme.chrome.Chrome' />
+	<inherits name='net.customware.gwt.dispatch.Dispatch' />
+
+	<inherits name="com.google.gwt.logging.Logging"/>
+	<set-property name="gwt.logging.consoleHandler" value="ENABLED"/>
+ 	<set-property name="gwt.logging.developmentModeHandler" value="DISABLED" />
+ 	<set-property name="gwt.logging.firebugHandler" value="DISABLED" />
+ 	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+ 	<set-property name="gwt.logging.systemHandler" value="DISABLED" />
+ 	<set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
+	<set-property name="gwt.logging.logLevel" value="SEVERE"/>
+	
+	<!-- Use ClientFactoryImpl by default -->
+	<replace-with class="com.hotf.client.ClientFactoryImpl">
+		<when-type-is class="com.hotf.client.ClientFactory" />
+	</replace-with>
+
+	<entry-point class='com.hotf.client.Hotf' />
+
+	<source path='client' />
+
+</module>

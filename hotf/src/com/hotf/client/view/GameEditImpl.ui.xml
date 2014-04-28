@@ -1,0 +1,119 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:c='urn:import:com.hotf.client.view.control'
+	xmlns:l="urn:import:com.google.gwt.user.cellview.client">
+
+	<ui:with field='resources' type='com.hotf.client.Resources' />
+
+	<ui:style>
+		.tabPanel {
+			height: 546px;
+		}
+		.dataPanel {
+			width: 100%;
+			height: 450px;
+		}
+		.dataPanel th {
+			white-space: normal;
+			text-align: center;
+		}
+		.dataPanel table {
+			width: 98% !important;
+		}
+		.headings {
+			width: 98%;
+		}
+		.headings td {
+			width: 320px;
+			border-bottom: 2px solid #6F7277;
+			padding: 3px 15px;
+			text-align: center;
+			color: #4B4A4A;
+			text-shadow: #DDF 1px 1px 0;
+			overflow: hidden;
+			white-space: nowrap;
+			font-weight: bold;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel addStyleNames="{resources.style.post}">
+		<div class="{resources.style.postCommands}">
+			<g:Anchor ui:field="saveLink">Save</g:Anchor>
+			<g:Anchor ui:field="closeLink">Close</g:Anchor>
+		</div>
+		<table class="{resources.style.form}">
+			<tr>
+				<td><p class="{resources.style.formLabel}">Title</p></td>
+				<td width="100%">
+					<g:TextBox ui:field="titleField" addStyleNames="{resources.style.wideFormField}"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="2">
+					<g:TabLayoutPanel ui:field="tabPanel" addStyleNames="{style.tabPanel}" barUnit='PX' barHeight='39'>
+						<g:tab>
+							<g:header size='3'>Description </g:header>
+							<c:RichTextEditor height="390px" ui:field="descriptionField" addStyleNames="{resources.style.formArea}"/>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Armour</g:header>
+							<g:FlowPanel>
+								<g:HorizontalPanel addStyleNames="{resources.style.postCommands}">
+									<g:HTML><p>Armour</p></g:HTML>
+									<g:Anchor ui:field="addArmourButton">Add</g:Anchor>
+								</g:HorizontalPanel>
+								<l:DataGrid addStyleNames="{style.dataPanel}" ui:field="armourList"/>
+							</g:FlowPanel>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Weapons</g:header>
+							<g:FlowPanel>
+								<g:HorizontalPanel addStyleNames="{resources.style.postCommands}">
+									<g:HTML><p>Weapon</p></g:HTML>
+									<g:Anchor ui:field="addWeaponButton">Add</g:Anchor>
+								</g:HorizontalPanel>
+								<l:DataGrid addStyleNames="{style.dataPanel}" ui:field="weaponsList"/>
+							</g:FlowPanel>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Artifacts</g:header>
+							<g:FlowPanel>
+								<g:HorizontalPanel addStyleNames="{resources.style.postCommands}">
+									<g:HTML><p>Artifact</p></g:HTML>
+									<g:Anchor ui:field="addArtifactButton">Add</g:Anchor>
+								</g:HorizontalPanel>
+								<l:DataGrid addStyleNames="{style.dataPanel}" ui:field="artifactList"/>
+							</g:FlowPanel>
+						</g:tab>
+						<g:tab>
+							<g:header size='3'>Skills</g:header>
+							<g:FlowPanel>
+								<g:HorizontalPanel>
+									<g:HorizontalPanel addStyleNames="{resources.style.postCommands}">
+										<g:HTML><p>Weapon Skill</p></g:HTML>
+										<g:Anchor ui:field="addSkillWeaponButton">Add</g:Anchor>
+										<g:Anchor ui:field="removeSkillWeaponButton">Remove</g:Anchor>
+										<g:ListBox ui:field="weaponChooser"/>
+									</g:HorizontalPanel>
+									<g:HorizontalPanel addStyleNames="{resources.style.postCommands}">
+										<g:HTML><p>Artifact Skill</p></g:HTML>
+										<g:Anchor ui:field="addSkillArtifactButton">Add</g:Anchor>
+										<g:Anchor ui:field="removeSkillArtifactButton">Remove</g:Anchor>
+										<g:ListBox ui:field="artifactChooser"/>
+									</g:HorizontalPanel>
+								</g:HorizontalPanel>
+								<g:HorizontalPanel addStyleNames='{style.headings}'>
+									<g:Label>General Skill</g:Label>
+									<g:Label>Specific Skill</g:Label>
+									<g:Label>Equipment</g:Label>
+								</g:HorizontalPanel>
+								<l:CellBrowser ui:field="skillList"/>
+							</g:FlowPanel>
+						</g:tab>
+					</g:TabLayoutPanel>
+				</td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

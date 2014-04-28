@@ -1,0 +1,50 @@
+.cellListWidget {
+	cursor: default !important;
+	text-align: center;
+}
+
+.cellListWidget a {
+	display: inline;
+	cursor: pointer;
+	font-size: 12pt;
+	white-space: nowrap;
+	text-decoration: underline;
+	color: #618bac;
+	padding: 3px 5px;
+	overflow: hidden;
+	border-radius: 13px;
+	-moz-border-radius: 13px;
+	background: none !important;
+}
+
+.cellListWidget table {
+	width: 100%;
+}
+
+.cellListWidget th {
+	font-weight: bold;
+}
+
+.cellListWidget td {
+	width: 20%;
+}
+
+.cellListWidget a:hover {
+	background-image: none;
+	background-color: #D8D8D8;
+}
+
+.cellListEvenItem {
+	cursor: default !important;
+}
+.cellListOddItem {
+	cursor: default !important;
+}
+.cellListKeyboardSelectedItem {
+	cursor: default !important;
+	background: none !important;
+}
+.cellListSelectedItem {
+	cursor: default !important;
+	background: none !important;
+}

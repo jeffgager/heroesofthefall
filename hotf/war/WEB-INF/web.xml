@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+
+	<filter>
+		<filter-name>DataServiceFilter</filter-name>
+		<filter-class>com.hotf.server.DataServiceFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>DataServiceFilter</filter-name>
+		<url-pattern>/hotf/*</url-pattern>
+		<url-pattern>/data/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>dispatch</servlet-name>
+		<servlet-class>com.hotf.server.servlet.HotfDispatchServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>imageServlet</servlet-name>
+		<servlet-class>com.hotf.server.servlet.GetImageServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>uploadServlet</servlet-name>
+		<servlet-class>com.hotf.server.servlet.UploadServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>rssServlet</servlet-name>
+		<servlet-class>com.hotf.server.servlet.RSSFeedServlet</servlet-class>
+        <init-param>
+            <param-name>default.feed.type</param-name>
+            <param-value>atom_1.0</param-value>
+        </init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatch</servlet-name>
+		<url-pattern>/hotf/dispatch</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>imageServlet</servlet-name>
+		<url-pattern>/data/images</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>uploadServlet</servlet-name>
+		<url-pattern>/data/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>rssServlet</servlet-name>
+		<url-pattern>/rss</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Require Login</web-resource-name>
+			<url-pattern>/hotf</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Require Login</web-resource-name>
+			<url-pattern>/data</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+</web-app>

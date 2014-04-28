@@ -1,0 +1,20 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:o="urn:import:com.sun.org.apache.xpath.internal.operations">
+
+	<ui:style>
+		.mainPanel {
+		}
+		.label {
+		}
+		.portrait {
+			width: 26px;
+			height: 26px;
+		}
+	</ui:style>
+	
+	<g:FlowPanel addStyleNames="{style.mainPanel}" >
+		<g:Image ui:field="portraitField" addStyleNames="{style.portrait}"/>
+		<g:Label ui:field="labelField" addStyleNames="{style.label}"/>
+	</g:FlowPanel>
+
+</ui:UiBinder>

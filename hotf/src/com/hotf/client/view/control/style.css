@@ -1,0 +1,35 @@
+body, th, td, button, input {
+	font-family: Tahoma, Verdana, sans-serif;
+	font-size: 10pt;
+}
+
+.dialog {
+	border: 1px solid #aaaaaa;
+}
+
+.caption {
+	background-color: #126e26;
+	color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #ffffff;
+	padding-left: 10pt;
+	padding-right: 10pt;
+	padding-top: 3pt;
+	padding-bottom: 3pt;
+}
+
+.dialogContent {
+	padding: 5px;
+	background-color: #ffffff;
+}
+
+.dialogButtons {
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.dialogButton {
+	width: 100px;
+	height: 30px;
+	margin-right: 5px;
+}
