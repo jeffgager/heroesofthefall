@@ -1,0 +1,25 @@
+application: playhotf
+version: 1
+runtime: python27
+threadsafe: yes
+api_version: 1
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: images/favicon.ico
+  upload: images/favicon\.ico
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /services/.*
+  script: services.app
+
+- url: /.*
+  script: pages.app
+
+  
