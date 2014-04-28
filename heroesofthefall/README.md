@@ -1,4 +1,4 @@
-appengine-skeleton
+HEROES-OF-THE-FALL
 =============================
 
-This is a generated application from the appengine-skeleton archetype.
+Back end service for Heroes of The Fall.
