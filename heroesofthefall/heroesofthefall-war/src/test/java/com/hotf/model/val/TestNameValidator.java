@@ -2,12 +2,21 @@ package com.hotf.model.val;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ResourceBundle;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestNameValidator {
 
-	private PatternValidator nameValidator = new PatternValidator("^[a-zA-Z]{3,3}[a-zA-Z0-9]{0,27}", "Name must have at least three letters followed by up to 27 letters or numbers");
+	private static PatternValidator nameValidator;
 
+	@BeforeClass
+	public static void beforeClass() {
+		ResourceBundle res = ResourceBundle.getBundle("validation");
+		nameValidator = new PatternValidator(res.getString("validation.Role.name.pattern"), res.getString("validation.Role.name.message"));
+	}
+	
 	@Test
 	public void testValidName() throws ValidationException {
 		assertEquals("aaa", nameValidator.validate("aaa"));

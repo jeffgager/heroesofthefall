@@ -16,9 +16,7 @@ public class RoleDS implements Role {
 	
 	public RoleDS(AccountDS account) {
 		String accountId = account.getId();
-		if (accountId == null) {
-			throw new IllegalArgumentException("Cannot create Role in an un-saved Account");
-		}
+		assert accountId != null;
 		entity = new Entity(KIND_ROLE, KeyFactory.stringToKey(accountId));
 	}
 	
