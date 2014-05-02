@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestNameValidator {
 
-	private NameValidator nameValidator = new NameValidator();
+	private PatternValidator nameValidator = new PatternValidator("^[a-zA-Z]{3,3}[a-zA-Z0-9]{0,27}", "Name must have at least three letters followed by up to 27 letters or numbers");
 
 	@Test
 	public void testValidName() throws ValidationException {
