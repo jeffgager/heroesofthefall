@@ -2,19 +2,18 @@ package com.hotf.model.val;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ResourceBundle;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestNameValidator {
+import com.hotf.model.Role;
+
+public class TestRoleNameValidator {
 
 	private static PatternValidator nameValidator;
 
 	@BeforeClass
 	public static void beforeClass() {
-		ResourceBundle res = ResourceBundle.getBundle("validation");
-		nameValidator = new PatternValidator(res.getString("validation.Role.name.pattern"), res.getString("validation.Role.name.message"));
+		nameValidator = new PatternValidator(Role.KIND_ROLE, Role.PROPERTY_NAME);
 	}
 	
 	@Test
